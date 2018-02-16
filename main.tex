@@ -19,7 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{amsfonts,graphicx,amsmath,hyperref}
 \title{Habib University\\CS-113 Discrete Mathematics\\Spring 2018\\HW 2}
-\author{$<your ID>$}  % replace with your ID, e.g. oy02945
+\author{$<zv03573>$}  % replace with your ID, e.g. oy02945
 \date{Due: 19h, 16th February, 2018}
 
 
@@ -37,7 +37,7 @@
 \begin{parts}
 
  
-  \part[5] Determine the domain, codomain and set of values for the following function to be 
+  \part[5] Determine the domain, codomain and set of values for the following function to be  
   \begin{subparts}
   \subpart Partial
   \subpart Total
@@ -48,13 +48,22 @@
   \end{center}
 
   \begin{solution}
-    % Write your solution here
+  
+    For the function to be partial: \newline
+    Domain: Set of all integers. \newline
+    Codomain: Set of all real numbers. \newline
+    Set of Values: All positive real numbers. \newline
+    
+    For the function to be total: \newline
+    Domain: Set of all positive integers that are perfect squares. \newline
+    Codomain: Set of all real numbers. \newline
+    Set of Values: All positive real numbers.
   \end{solution}
   
   \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$� such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
   
   \begin{solution}
-    % Write your solution here
+    For \textit{f} to be a function, it is necessary that all elements in the domain have an image in the codomain, which is not the case here. Suppose S={"0100"}, then \textit{f(S)} = 2. Similarly, when S={0010}, then \textit{f(S)} = 3. However, if S={"0000"}, then it does not have any image, hence it is undefined for S={"0000"}. \textit{f(S)} = 0 when S={""}. We see that there exists a bit string S={"0000"}, for which the function is undefined, therefore \textit{f} is not a function from the set of all bit strings to the set of integers.
   \end{solution}
 
   \part[15] For $X,Y \in S$, explain why (or why not) the following define an equivalence relation on $S$:
@@ -65,7 +74,19 @@
   \end{subparts}
 
   \begin{solution}
-    % Write your solution here
+    For it to form an equivalence relation, X and Y have to be reflexive, symmetric, and transitive at the same time. Hence we look at them one by one. \newline
+    i) X can be in a class together with itself and Y can be in class together with itself, hence it is reflexive. \newline
+    If X has been in class together with Y then Y has been in class together with X, i.e. order does not matter. Hence it is symmetric. \newline
+    However, suppose there is a third element Z. If X has been in class together with Y and Y has been in class together with Z, then it is not necessary that X and Y, and Y and Z have been together in the same class. Hence, transitive property does not hold true. \newline
+    It does not define an equivalence relation. \newline \newline
+    ii) X rhymes with X itself and Y rhymes with Y itself, hence it is reflexive. \newline
+    If X rhymes with Y, then Y necessarily rhymes with X, hence it is symmetric. \newline
+    Suppose there is a third element Z. If X rhymes with Y and Y rhymes with Z then it is safe to say that X rhymes with Z. Hence, it is transitive. \newline
+    Since, all three properties hold true, it defines an equivalence relation. \newline \newline
+    iii) X is a subset of X itself and Y is a subset of Y itself, hence reflexive property holds true. \newline
+    If X=$\{1,2\}$ and $Y=\{1,2,3\}$ then X is a subset of Y but Y is clearly not a subset of X, hence they are not symmetric. \newline
+    If there is a third set U such that X is a subset of Y and Y is a subset of U, then X is definitely a subset of U. Hence, transitive property holds true. \newline
+    Since it is not symmetric, it does not define an equivalence relation.
   \end{solution}
 
 \end{parts}
@@ -73,8 +94,25 @@
 %Long questions (75)
 \question[15] Let $A = f^{-1}(B)$. Prove that $f(A) \subseteq B$.
   \begin{solution}
-    % Write your solution here
-  \end{solution}
+  
+    Let $f : X \rightarrow Y$, $A \subseteq X$ and $B \subseteq Y$. \newline
+    We define: \newline
+    $f(A) = \{b |\exists a \in A$, $f(a)=b\}$. \newline
+    $f^{-1}(B) = \{a | a \in X$, $f(a) \in B\}$. \newline
+    We know that, $A=f^{-1}(B)$. To prove $f(A) \subseteq B$, let $b$ $\in$ $f(A)$. \newline
+    Since $b$ $\in$ $f(A)$, \newline
+                $\Rightarrow$ $\exists a \in A$, $f(a)=b\}$. [by definition of $f(A)$] \newline
+    Fix this $a$. Because $A=f^{-1}(B)$, let $a \in f^{-1}(B)$.\newline 
+    Since $a \in f^{-1}(B)$,
+                $\Rightarrow$ $f(a) \in B$. [by definition of $f^{-1}(B)$]\newline
+    We see that since $f(a)\in B$ and $f(a)=b$, \newline
+    therefore, $b$ $\in$ $B$. \newline
+    Since $b$ $\in$ $f(A)$ and $b$ $\in$ $B$, 
+    \newline            
+    Therefore, $f(A) \subseteq B$.
+    
+        
+\end{solution}
 
 \question[15] Consider $[n] = \{1,2,3,...,n\}$ where $n \in \mathbb{N}$. Let $A$ be the set of subsets of $[n]$ that have even size, and let $B$ be the set of subsets of $[n]$ that have odd size. Establish a bijection from $A$ to $B$, thereby proving $|A| = |B|$. (Such a bijection is suggested below for $n = 3$) 
 
@@ -88,7 +126,12 @@
 \end{center}
 
   \begin{solution}
-    % Write your solution here
+    The example shown for n=3 explains the suggested bijection, i.e. the two sets in each column differ only by the presence or absence of the number 3. If 3 is present in A , then it cannot be present in B and vice versa. We notice that x and f(x) always differ in size by exactly 1, so one of them must have even size, and the other must have odd size. This shows that the suggested f really does take even-sized sets to odd-sized sets. Now, to prove bijection, we need to prove the functions A and B to be injective as well as surjective. \newline
+    We have $f : A \rightarrow B$.
+    Let $x$, $y$ $\in$ $A$ and $f(x)=f(y)$,  then it must be true that $x=y$.This proves that $f$ is injective.\newline
+    Suppose $y \in B$. Then $x \in A$ such that $f(x)=y$. If x is a set that contains n, then $f(x)$ will be a set that does not contain n, whereas if x is a set which does not contain n, then $f(x)$ will add n to itself. Hence, $f$ is surjective as there is only one possible way to map x to y or y to x. \newline
+    Since $f$ is injective and surjective, it is also bijective. \newline
+    For every $x \in A$, there will be a $y \in B$, so $|A| = |B|$
   \end{solution}
   
 \question Mushrooms play a vital role in the biosphere of our planet. They also have recreational uses, such as in understanding the mathematical series below. A mushroom number, $M_n$, is a figurate number that can be represented in the form of a mushroom shaped grid of points, such that the number of points is the mushroom number. A mushroom consists of a stem and cap, while its height is the combined height of the two parts. Here is $M_5=23$:
@@ -121,11 +164,17 @@ Study the first five mushrooms carefully and make sure you can draw subsequent o
   \begin{parts}
     \part[15] Derive a closed-form for $M_n$ in terms of $n$.
   \begin{solution}
-    % Write your solution here
+    Dots in stem height: n-1. \newline
+
+    Dots in cap height: (n//2) + n. \newline
+
+    Dots in total height: dots in stem height + dots in cap height= n + (n/2)
   \end{solution}
     \part[5] What is the total height of the $20$th mushroom in the series? 
   \begin{solution}
-    % Write your solution here
+    Stem height=20 \newline
+    Cap height=10 \newline
+    Total height=30
   \end{solution}
 \end{parts}
 
@@ -153,12 +202,12 @@ The \href{http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibGen.ht
   \part[10] To begin, prove that the Fibonacci series is countable.
  
     \begin{solution}
-    % Write your solution here
+    For each n we can generate a Fibonacci series upto that number. The golden ratio i.e. 1.618 tells us that the Fibonacci series converges to a certain number. Thus, there is a bijection for every nth term i.e for every domain the nth value can be mapped to a distinct value using the formula and vice versa. This proves that it is bijective as all the domain is mapped to a certain codomain and all the codomain is mapped to a set of certain distinct values too. Hence, the series is countable.
   \end{solution}
   \part[15] Consider the Modified Wythoff as any array derived from the original, where each entry of the leading diagonal (marked in blue) of the original 2D-Array is replaced with an integer that does not occur in that row. Prove that the Modified Wythoff Array is countable. 
 
   \begin{solution}
-    % Write your solution here
+    Since the first number of the array is changed then we will obtain a table with unique elements in both the first row and the first column. According to this, the fibonacci series will be generated. Now if you take union of this changed set with the derived of previous part, then we obtain a set that is unique set and it will still remain countable.
   \end{solution}
 \end{parts}
 
